@@ -1,0 +1,23 @@
+<h2>New Book</h2>
+
+
+<table>
+  <h2>Users</h2>
+  <thead>
+   <th>image</th>
+   <th>name</th>
+   <th></th>
+ </thead>
+
+ <tbody>
+   <% @users.each do |user| %>
+   <tr>
+     <td><%= attachment_image_tag user, :profile_image_id, :fill, 50, 50, fallback: "no_image.jpg" %></td>
+     <td><%= user.name %></td>
+     <td><%= link_to "Show", "/user/#{user.id}" %></td>
+   </tr>
+   <% end %>
+ </tbody>
+</table>
+
+
