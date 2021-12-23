@@ -1,10 +1,8 @@
-<table>
+<div class="container px-5 px-sm-0">
   <h2>User info</h2>
-  <thead>
-    <tr>
-      <%= attachment_image_tag user, :profile_image_id, :fill, 100, 100, fallback: "no_image.jpg" %>
-    </tr>
-  </thead>
+      <%= attachment_image_tag user, :profile_image, :fill, 100, 100, fallback: "no_image.jpg" %>
+
+  <table class="table table-user">
   <tbody>
     <tr>
       <th>name</th>
@@ -15,10 +13,13 @@
       <th><%= user.introduction %></th>
     </tr>
     <tr>
-      <th colspan="2">
-        <%= link_to edit_user_path(current_user) do %>
-        <% end %>
+      <div class="row">
+      <%= link_to edit_user_path(current_user), class:"fas fa-user-cog btn btn-outline-secondary btn-block" do %>
+      <span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>
+      <% end %>
+      </div>
       </th>
     </tr>
   </tbody>
 </table>
+</div>

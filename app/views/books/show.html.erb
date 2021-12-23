@@ -1,1 +1,36 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-3">
 <%= render 'users/users', user: @user %>
+<h2>New Book</h2>
+<%= form_with model: @book, url: books_path, local: true do |f| %>
+<div>
+  <%= f.label :Title %>
+  <%= f.text_field :title %>
+</div>
+
+<div>
+  <%= f.label :Opinion %>
+  <%= f.text_area :body %>
+</div>
+
+<div>
+  <%= f.submit "Create Book",class:"btn btn-success col-xs-10 col-xs-offset-1"  %>
+</div>
+<% end %>
+</div>
+<div class="col-xs-9">
+
+<table class="table table-user-show">
+  <h2>Book detail</h2>
+  <tr>
+    <td><%= attachment_image_tag @user, :profile_image, :fill, 30, 30, fallback: "no_image.jpg" %></td>
+    <td><%= link_to @user.name, user_path(@user) %></td>
+    <td><%= link_to @book.title, book_path(@book) %></td>
+    <td><%= @book.body %></td>
+    <% if @book.user_id == current_user.id %>
+    <td><%= link_to "Edit", edit_book_path(@book), class:"btn btn-success" %></td>
+    <td><%= link_to "Destroy", book_path(@book), method: :delete, data: {confirm: "本当に消しますか？"}, class:"btn btn-danger"%></td>
+    <% end %>
+  </tr>
+</table>

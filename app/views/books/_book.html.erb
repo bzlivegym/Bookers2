@@ -1,15 +1,15 @@
-<h2>New book</h2>
 <%= form_with model:book, url: books_path, local: true do |f| %>
-<div>
-  <%= f.lavel :Title %>
+<div class="form-group">
+  <%= f.label :Title %>
   <%= f.text_field :title %>
 </div>
 
-<div>
-  <%= f.lavel :Opinion %>
+<div class="form-group">
+  <%= f.label :Opinion %>
   <%= f.text_area :body %>
 </div>
 
-<div>
-  <%= f.submit "Create Book" %>
+<div class="form-group">
+  <%= f.submit "Create Book", class:"btn btn-success"  %>
 </div>
+<% end %>

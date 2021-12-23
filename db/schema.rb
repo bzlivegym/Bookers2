@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 2021_12_21_075258) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "profile_image_id"
+    t.integer "profile_image_id"
     t.text "introduction"
     t.integer "book_id"
     t.index ["email"], name: "index_users_on_email", unique: true
