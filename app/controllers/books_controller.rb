@@ -54,7 +54,7 @@ class BooksController < ApplicationController
       if current_user.id != @book.user.id
         redirect_to books_path
       end
-    end
+  end
 
   def book_params
     params.require(:book).permit(:title, :body)

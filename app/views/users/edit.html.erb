@@ -1,5 +1,6 @@
-<div class="container"></div>
- <div class="row"></div>
+<div class="container">
+ <div class="row">
+   <div class="col-sm-12 col-md-8 col-lg5 px-5 px-sm-0 mx-auto">
   <h2>User info</h2>
    <%= render 'books/error', model: @user %>
    <%= form_with model:@user, loccal:true do |f| %>
@@ -13,3 +14,6 @@
     <%= f.submit " Update User",class:"btn btn-secondary" %>
   </div>
 <% end %>
+</div>
+</div>
+</div>
